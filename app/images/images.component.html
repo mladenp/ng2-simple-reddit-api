@@ -1,0 +1,19 @@
+<div class="main-content">
+
+
+  <button class="button" (click)="previous()"> << Previous </button>
+  <button class="button" (click)="next()"> Next >> </button>
+
+  <div *ngFor="let item of items" class="singleImg">
+
+    <a [href]="item.data.url" target="_blank">
+      <h4>{{ item.data.title }}</h4>
+      <img [src]="item.data.thumbnail">
+    </a>
+
+
+
+  </div>
+
+
+</div>

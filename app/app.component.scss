@@ -1,0 +1,44 @@
+@import url(https://fonts.googleapis.com/css?family=Open%20Sans);
+
+$mobile-only: "only screen and (max-width : 768px)";
+
+body {
+  margin-bottom: 0;
+
+  @media #{$mobile-only} {
+    margin: 0;
+  }
+}
+
+.button{
+  font-size: 4rem;
+  margin: 1rem;
+}
+h1{
+  text-align: center;
+  font-size: 6rem;
+}
+.singleImg{
+  margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid #888888;
+  border-radius: 10%;
+  background: #f9f9f9;
+  min-height: 150px;
+}
+#wrapper {
+  background-color: #F6F6EF;
+  position: relative;
+  width: 85%;
+  margin: 0 auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  height: 100%;
+
+
+   @media #{$mobile-only} {
+    width: 100%;
+    background-color: #fff;
+  }
+}
