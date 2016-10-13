@@ -4,6 +4,7 @@ import { rAPIService } from '../reddit.service';
 @Component({
   selector: 'app-images',
   moduleId: module.id,
+  
   templateUrl: './images.component.html'
 })
 
