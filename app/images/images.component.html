@@ -1,19 +1,23 @@
-<div class="main-content">
+<div *ngIf="active" class="spinner"></div>
+
+<button class="button button-primary" (click)="previous()" [routerLink]="[ pageNumber - 1]"> ← Previous </button>
+<button class="button button-primary" (click)="next()" [routerLink]="[ pageNumber + 1]"> Next → </button>
+
+<div *ngIf="!active" [@fadeInOut]="true" class="row">
+
+  <div *ngFor="let item of items" class="columns oneImg">
 
 
-  <button class="button" (click)="previous()"> << Previous </button>
-  <button class="button" (click)="next()"> Next >> </button>
-
-  <div *ngFor="let item of items" class="singleImg">
-
-    <a [href]="item.data.url" target="_blank">
-      <h4>{{ item.data.title }}</h4>
-      <img [src]="item.data.thumbnail">
+    <a download="{{ item.data.preview.images[0].source.url }}" href="{{ item.data.preview.images[0].source.url }}" title="dlimg">
+      Download
     </a>
 
-
+    <a [routerLink]="['/single', item.data.id]" routerLinkActive="active">
+      <h4>{{ item.data.title }}</h4>
+      <img [src]="item.data.thumbnail" onError="this.src='default.jpg'">
+      <img [src]="item.data.preview.images[0].resolutions[3].url">
+    </a>
 
   </div>
-
 
 </div>

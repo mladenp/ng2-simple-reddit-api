@@ -8,9 +8,9 @@ import { ActivatedRoute } from '@angular/router';
 import { rAPIService } from '../reddit.service';
 
 @Component({
-  selector: 'app-images',
+  selector: 'single-image',
   moduleId: module.id,
-  templateUrl: './images.component.html',
+  templateUrl: './singleImage.component.html',
   styleUrls: ['./../app.component.scss'],
   animations: [
     trigger('fadeInOut', [
@@ -25,7 +25,7 @@ import { rAPIService } from '../reddit.service';
   ]
 })
 
-export class ImagesComponent implements OnInit {
+export class SingleImageComponent implements OnInit {
   items: any;
   nextId: any;
   previousId: any;
@@ -43,7 +43,7 @@ export class ImagesComponent implements OnInit {
       console.log(params);
     });
 
-    this._imagesAPIService.fetchNext()
+    this._imagesAPIService.fetchNext("bla")
       .subscribe(
         items => {
           this.items = items.data.children;

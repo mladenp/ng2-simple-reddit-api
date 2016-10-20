@@ -9,7 +9,7 @@ export class rAPIService {
 
   constructor(private http: Http) {
     this.http = http;
-    this.APIurl = 'https://www.reddit.com/r/earthPorn/new.json?sort=new&limit=10';
+    this.APIurl = 'https://www.reddit.com/r/earthPorn/new.json?sort=top&limit=10';
   }
 
   getAll(): void{
@@ -19,14 +19,6 @@ export class rAPIService {
         console.log(res.json());
       })
 
-  }
-
-  // Get 10 latest images
-  fetchStories(): Observable<any> {
-    return this.http.get(`${this.APIurl}`)
-      .map(response =>
-        response.json()
-      );
   }
 
   // Get Next 10 images by next page ID (after)
